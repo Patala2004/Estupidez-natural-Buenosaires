@@ -1,0 +1,611 @@
+[gd_scene load_steps=8 format=3 uid="uid://cncirkovunxlw"]
+
+[ext_resource type="Texture2D" uid="uid://cueo0ehktlb52" path="res://mapa/Imagen de WhatsApp 2024-11-28 a las 20.53.40_a1ef8971.jpg" id="1_5v6fq"]
+[ext_resource type="Texture2D" uid="uid://cpb0j5iaj5fbf" path="res://mapa/linea.png" id="2_ejv3n"]
+[ext_resource type="Texture2D" uid="uid://bkji63kuurme4" path="res://mapa/NODO.png" id="3_i63da"]
+[ext_resource type="Script" path="res://Scripts/CalculateRouteButton.gd" id="4_yospu"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dnp4m"]
+load_path = "res://.godot/imported/NODO.png-913770dd7dd12df0e1624da83ef16bbb.ctex"
+
+[sub_resource type="Theme" id="Theme_ktay2"]
+default_font_size = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h15q1"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Root" type="Node2D"]
+
+[node name="Fondo blanco" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1027, 710)
+scale = Vector2(200, 200)
+texture = ExtResource("3_i63da")
+
+[node name="Metro" type="Sprite2D" parent="."]
+position = Vector2(1713.19, 103.263)
+scale = Vector2(2.32821, 2.23659)
+texture = ExtResource("1_5v6fq")
+
+[node name="Aristas" type="Node" parent="Metro"]
+
+[node name="Alberti-Pasco" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(-2, 0)
+points = PackedVector2Array(1182, -67, 1307, -67)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Pasco-Congreso" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(122, 0)
+points = PackedVector2Array(1182, -67, 1307, -67)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Congreso-Saenz Peña" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(244, 0)
+points = PackedVector2Array(1182, -67, 1307, -67)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Saenz Peña-Lima" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(366, 0)
+points = PackedVector2Array(1182, -67, 1299, -67)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Lima-Piedras" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(479, 1)
+points = PackedVector2Array(1182, -67, 1376, -67)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Piedras-Perú" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(665, 1)
+points = PackedVector2Array(1191, -67, 1275, -67)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Perú-Plaza de Mayo" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(749, 1)
+points = PackedVector2Array(1191, -67, 1322, -67)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Pasteur-Callao2" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(54, -335)
+points = PackedVector2Array(1191, -67, 1368, -67)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Callao2-Uruguay" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(229, -335)
+points = PackedVector2Array(1191, -67, 1322, -67)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Uruguay-Carlos pellegrini" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(359, -335)
+points = PackedVector2Array(1191, -67, 1417, -67)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Carlos Pellegrini-Florida" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(584, -335)
+points = PackedVector2Array(1191, -67, 1378, -67)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Florida-Leandro n alem" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(766, -335)
+points = PackedVector2Array(1195, -67, 1325, -67)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Constitución-San Juan" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(1, 0)
+points = PackedVector2Array(1738, 1058, 1738, 698)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="San Juan-Independencia1" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(1, 0)
+scale = Vector2(1, 0.66253)
+points = PackedVector2Array(1738, 1058, 1738, 668.648)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Independencia1-Moreno" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(1, -614)
+points = PackedVector2Array(1738, 1058, 1738, 721)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Moreno-Avenida de mayo" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(1, -952)
+points = PackedVector2Array(1738, 1058, 1738, 884)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Avenida de Mayo-Diagonal Norte" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(1, -1125)
+points = PackedVector2Array(1738, 1058, 1738, 841, 1837, 841)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Diagonal norte-Lavalle" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(138, -1372)
+points = PackedVector2Array(1700, 1088, 1738, 1088, 1738, 884)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Lavalle-San Martín" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(138, -1547)
+points = PackedVector2Array(1738, 1058, 1738, 895.895, 1840, 794)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="San Martín-Retiro" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(2, 3)
+points = PackedVector2Array(1978, -753, 2094, -869)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Facultad de Medicina-Callao1" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(33, -585)
+points = PackedVector2Array(1191, -67, 1393, -67)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Callao1-Tribunales" type="Line2D" parent="Metro/Aristas"]
+points = PackedVector2Array(1427, -653, 1460, -653, 1593, -520)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Tribunales-9 de Julio" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(133, 133)
+points = PackedVector2Array(1460, -653, 1637, -476)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="9 de Julio-Catedral" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(318, 309)
+points = PackedVector2Array(1460, -653, 1650, -463)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Pichincha-Entre Ríos" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(59, 771)
+points = PackedVector2Array(1182, -67, 1370, -67)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Entre Ríos-San José" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(247, 771)
+points = PackedVector2Array(1182, -67, 1305, -67)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="San José-Independencia2" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(370, 771)
+points = PackedVector2Array(1182, -67, 1251.1, -67, 1251, -328)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Independencia2-Belgrano" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(-117, -615)
+points = PackedVector2Array(1738, 1058, 1738, 974.653, 1919, 804)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Belgrano-Bolívar" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(-117, -615)
+scale = Vector2(1, 1)
+points = PackedVector2Array(1919, 804, 2085, 644)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Bolívar-Catedral" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(1, -952)
+points = PackedVector2Array(1967, 981, 1967, 794)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Perú-Catedral" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(1, -952)
+points = PackedVector2Array(1937, 886, 1967, 886, 1967, 794)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Perú-Bolívar" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(1, -952)
+points = PackedVector2Array(1937, 886, 1967, 886, 1967, 981)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Independencia1-Independencia2" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(440, 512)
+points = PackedVector2Array(1182, -67, 1299, -67)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Lima-Avenida de Mayo" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(480, 1)
+points = PackedVector2Array(1182, -67, 1259, -67)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Carlos Pellegrini-Diagonal Norte" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(594, -335)
+points = PackedVector2Array(1182, -67, 1182, -11, 1245, 52)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="9 de Julio-Diagonal Norte2" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(594, -335)
+points = PackedVector2Array(1182, -11, 1245, 52)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Carlos Pellegrini-9 de Julio" type="Line2D" parent="Metro/Aristas"]
+position = Vector2(594, -335)
+points = PackedVector2Array(1182, -67, 1182, -11)
+width = 20.0
+default_color = Color(1, 1, 1, 0)
+
+[node name="Nodos" type="Node" parent="Metro"]
+
+[node name="A" type="Node" parent="Metro/Nodos"]
+
+[node name="A_ALBERTI" type="Sprite2D" parent="Metro/Nodos/A"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1182, -67)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="A_PASCO" type="Sprite2D" parent="Metro/Nodos/A"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1302, -68)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="A_CONGRESO" type="Sprite2D" parent="Metro/Nodos/A"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1429, -67)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="A_SAENZ PEÑA" type="Sprite2D" parent="Metro/Nodos/A"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1551, -66)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="A_LIMA" type="Sprite2D" parent="Metro/Nodos/A"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1661, -68)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="A_PIEDRAS" type="Sprite2D" parent="Metro/Nodos/A"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1855, -65)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="A_PERÚ" type="Sprite2D" parent="Metro/Nodos/A"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1939, -67)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="A_PLAZA DE MAYO" type="Sprite2D" parent="Metro/Nodos/A"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(2072, -66)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="B" type="Node" parent="Metro/Nodos"]
+
+[node name="B_PASTEUR" type="Sprite2D" parent="Metro/Nodos/B"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1246, -402)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="B_CALLAO2" type="Sprite2D" parent="Metro/Nodos/B"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1420, -401)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="B_URUGUAY" type="Sprite2D" parent="Metro/Nodos/B"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1550, -401)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="B_CARLOS PELLEGRINI" type="Sprite2D" parent="Metro/Nodos/B"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1776, -401)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="B_FLORIDA" type="Sprite2D" parent="Metro/Nodos/B"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1961, -401)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="B_LEANDRO N ALEM" type="Sprite2D" parent="Metro/Nodos/B"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(2090, -402)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="C" type="Node" parent="Metro/Nodos"]
+
+[node name="C_CONSTITUCIÓN" type="Sprite2D" parent="Metro/Nodos/C"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1739, 1057)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="C_SAN JUAN" type="Sprite2D" parent="Metro/Nodos/C"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1739, 698)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="C_INDEPENDENCIA1" type="Sprite2D" parent="Metro/Nodos/C"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1741, 444)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="C_MORENO" type="Sprite2D" parent="Metro/Nodos/C"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1740, 107)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="C_AVENIDA DE MAYO" type="Sprite2D" parent="Metro/Nodos/C"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1739, -68)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="C_ DIAGONAL NORTE" type="Sprite2D" parent="Metro/Nodos/C"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1838, -285)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="C_LAVALLE" type="Sprite2D" parent="Metro/Nodos/C"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1876, -491)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="C_GENERAL SAN MARTÍN" type="Sprite2D" parent="Metro/Nodos/C"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1977, -754)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="C_RETIRO" type="Sprite2D" parent="Metro/Nodos/C"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(2098, -865)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="D" type="Node" parent="Metro/Nodos"]
+
+[node name="D_FACULTAD DE MEDICINA" type="Sprite2D" parent="Metro/Nodos/D"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1225, -653)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="D_CALLAO1" type="Sprite2D" parent="Metro/Nodos/D"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1426, -654)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="D_TRIBUNALES" type="Sprite2D" parent="Metro/Nodos/D"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1593, -522)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="D_9 DE JULIO" type="Sprite2D" parent="Metro/Nodos/D"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1775, -346)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="D_CATEDRAL" type="Sprite2D" parent="Metro/Nodos/D"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1967, -162)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="E" type="Node" parent="Metro/Nodos"]
+
+[node name="E_PICHINCHA" type="Sprite2D" parent="Metro/Nodos/E"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1240, 702)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="E_ENTRE RÍOS" type="Sprite2D" parent="Metro/Nodos/E"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1427, 702)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="E_SAN JOSÉ" type="Sprite2D" parent="Metro/Nodos/E"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1550, 703)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="E_INDEPENDENCIA2" type="Sprite2D" parent="Metro/Nodos/E"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1621, 443)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="E_BELGRANO" type="Sprite2D" parent="Metro/Nodos/E"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1802, 188)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="E_BOLÍVAR" type="Sprite2D" parent="Metro/Nodos/E"]
+light_mask = 4
+visibility_layer = 4
+z_index = 5
+position = Vector2(1967, 27)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="Bordes" type="Node2D" parent="."]
+
+[node name="Linea" type="Sprite2D" parent="Bordes"]
+position = Vector2(1041.12, 135.32)
+scale = Vector2(112.5, 2408.64)
+texture = ExtResource("2_ejv3n")
+
+[node name="Linea2" type="Sprite2D" parent="Bordes"]
+position = Vector2(1749.13, 1283.39)
+scale = Vector2(1384.25, 112.5)
+texture = ExtResource("2_ejv3n")
+
+[node name="Linea3" type="Sprite2D" parent="Bordes"]
+position = Vector2(2385, 56.8751)
+scale = Vector2(112.5, 2380.25)
+texture = ExtResource("2_ejv3n")
+
+[node name="Linea4" type="Sprite2D" parent="Bordes"]
+position = Vector2(1660.38, -1077)
+scale = Vector2(1351.25, 112.5)
+texture = ExtResource("2_ejv3n")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 100)
+scale = Vector2(2, 2)
+zoom = Vector2(0.3, 0.3)
+
+[node name="Buttons" type="Node2D" parent="."]
+
+[node name="Start" type="OptionButton" parent="Buttons"]
+offset_left = -2494.0
+offset_top = -1345.0
+offset_right = -1422.0
+offset_bottom = -1194.0
+theme_override_font_sizes/font_size = 70
+expand_icon = true
+item_count = 2
+selected = 0
+popup/item_0/text = "Selecciona estación de origen"
+popup/item_0/id = 0
+popup/item_1/text = "Estaciones"
+popup/item_1/id = 1
+popup/item_1/separator = true
+
+[node name="End" type="OptionButton" parent="Buttons"]
+offset_left = -1319.0
+offset_top = -1343.0
+offset_right = -247.0
+offset_bottom = -1192.0
+theme_override_font_sizes/font_size = 70
+expand_icon = true
+item_count = 2
+selected = 0
+popup/item_0/text = "Selecciona estación de destino"
+popup/item_0/id = 0
+popup/item_1/text = "Estaciones"
+popup/item_1/id = 1
+popup/item_1/separator = true
+
+[node name="StartSearch" type="Button" parent="Buttons"]
+offset_left = -2962.0
+offset_top = -1361.0
+offset_right = -2595.0
+offset_bottom = -1181.0
+theme = SubResource("Theme_ktay2")
+theme_override_colors/font_hover_color = Color(0.699653, 0.699653, 0.699653, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_h15q1")
+text = "Search"
+script = ExtResource("4_yospu")
+
+[node name="Dibujo" type="Node2D" parent="Buttons/StartSearch"]
+position = Vector2(20, 0)

@@ -1,0 +1,257 @@
+[gd_scene load_steps=8 format=3 uid="uid://cncirkovunxlw"]
+
+[ext_resource type="Texture2D" uid="uid://cueo0ehktlb52" path="res://mapa/Imagen de WhatsApp 2024-11-28 a las 20.53.40_a1ef8971.jpg" id="1_5v6fq"]
+[ext_resource type="Texture2D" uid="uid://cpb0j5iaj5fbf" path="res://mapa/linea.png" id="2_ejv3n"]
+[ext_resource type="Texture2D" uid="uid://bkji63kuurme4" path="res://mapa/NODO.png" id="3_i63da"]
+[ext_resource type="Script" path="res://Scripts/CalculateRouteButton.gd" id="4_yospu"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dnp4m"]
+load_path = "res://.godot/imported/NODO.png-913770dd7dd12df0e1624da83ef16bbb.ctex"
+
+[sub_resource type="Theme" id="Theme_ktay2"]
+default_font_size = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h15q1"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Root" type="Node2D"]
+
+[node name="Metro" type="Sprite2D" parent="."]
+position = Vector2(1713.19, 103.263)
+scale = Vector2(2.32821, 2.23659)
+texture = ExtResource("1_5v6fq")
+
+[node name="A" type="Node" parent="Metro"]
+
+[node name="A_ALBERTI" type="Sprite2D" parent="Metro/A"]
+position = Vector2(1182, -67)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="A_PASCO" type="Sprite2D" parent="Metro/A"]
+position = Vector2(1302, -68)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="A_CONGRESO" type="Sprite2D" parent="Metro/A"]
+position = Vector2(1429, -67)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="A_SAENZ PENA" type="Sprite2D" parent="Metro/A"]
+position = Vector2(1551, -66)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="A_LIMA" type="Sprite2D" parent="Metro/A"]
+position = Vector2(1661, -68)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="A_PIEDRAS" type="Sprite2D" parent="Metro/A"]
+position = Vector2(1855, -65)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="A_PERU" type="Sprite2D" parent="Metro/A"]
+position = Vector2(1939, -67)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="A_PLAZA DE MAYO" type="Sprite2D" parent="Metro/A"]
+position = Vector2(2072, -64)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="B" type="Node" parent="Metro"]
+
+[node name="B_PASTEUR" type="Sprite2D" parent="Metro/B"]
+position = Vector2(1246, -402)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="B_CALLAO" type="Sprite2D" parent="Metro/B"]
+position = Vector2(1420, -401)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="B_URUGUAY" type="Sprite2D" parent="Metro/B"]
+position = Vector2(1550, -401)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="B_CARLOS PELLEGRINI" type="Sprite2D" parent="Metro/B"]
+position = Vector2(1776, -401)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="B_FLORIDA" type="Sprite2D" parent="Metro/B"]
+position = Vector2(1961, -401)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="B_LEANDRO N ALEM" type="Sprite2D" parent="Metro/B"]
+position = Vector2(2087, -401)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="C" type="Node" parent="Metro"]
+
+[node name="C_CONSTITUCION" type="Sprite2D" parent="Metro/C"]
+position = Vector2(1739, 1057)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="C_SAN JUAN" type="Sprite2D" parent="Metro/C"]
+position = Vector2(1739, 698)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="C_INDEPENDENCIA" type="Sprite2D" parent="Metro/C"]
+position = Vector2(1741, 444)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="C_MORENO" type="Sprite2D" parent="Metro/C"]
+position = Vector2(1740, 107)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="C_AVENIDA DE MAYO" type="Sprite2D" parent="Metro/C"]
+position = Vector2(1739, -68)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="C_ DIAGONAL NORTE" type="Sprite2D" parent="Metro/C"]
+position = Vector2(1838, -285)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="C_LAVALLE" type="Sprite2D" parent="Metro/C"]
+position = Vector2(1876, -491)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="C_GENERAL SAN MARTIN" type="Sprite2D" parent="Metro/C"]
+position = Vector2(1977, -754)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="C_RETIRO" type="Sprite2D" parent="Metro/C"]
+position = Vector2(2098, -865)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="D" type="Node" parent="Metro"]
+
+[node name="D_FACULTAD DE MEDICINA" type="Sprite2D" parent="Metro/D"]
+position = Vector2(1225, -653)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="D_CALLAO" type="Sprite2D" parent="Metro/D"]
+position = Vector2(1426, -654)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="D_TRIBUNALES" type="Sprite2D" parent="Metro/D"]
+position = Vector2(1593, -522)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="D_9 DE JULIO" type="Sprite2D" parent="Metro/D"]
+position = Vector2(1775, -346)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="D_CATEDRAL" type="Sprite2D" parent="Metro/D"]
+position = Vector2(1967, -162)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="E" type="Node" parent="Metro"]
+
+[node name="E_PICHINCHA" type="Sprite2D" parent="Metro/E"]
+position = Vector2(1240, 702)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="E_ENTRE RIOS" type="Sprite2D" parent="Metro/E"]
+position = Vector2(1427, 702)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="E_SAN JOSE" type="Sprite2D" parent="Metro/E"]
+position = Vector2(1550, 703)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="E_INDEPENDENCIA" type="Sprite2D" parent="Metro/E"]
+position = Vector2(1621, 443)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="E_BELGRANO" type="Sprite2D" parent="Metro/E"]
+position = Vector2(1802, 188)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="E_BOLIVAR" type="Sprite2D" parent="Metro/E"]
+position = Vector2(1967, 27)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_dnp4m")
+
+[node name="Fondo blanco" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(972, 688)
+scale = Vector2(200, 200)
+texture = ExtResource("3_i63da")
+
+[node name="Bordes" type="Node2D" parent="."]
+
+[node name="Linea" type="Sprite2D" parent="Bordes"]
+position = Vector2(1041.12, 135.32)
+scale = Vector2(112.5, 2408.64)
+texture = ExtResource("2_ejv3n")
+
+[node name="Linea2" type="Sprite2D" parent="Bordes"]
+position = Vector2(1749.13, 1283.39)
+scale = Vector2(1384.25, 112.5)
+texture = ExtResource("2_ejv3n")
+
+[node name="Linea3" type="Sprite2D" parent="Bordes"]
+position = Vector2(2385, 56.8751)
+scale = Vector2(112.5, 2380.25)
+texture = ExtResource("2_ejv3n")
+
+[node name="Linea4" type="Sprite2D" parent="Bordes"]
+position = Vector2(1660.38, -1077)
+scale = Vector2(1351.25, 112.5)
+texture = ExtResource("2_ejv3n")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 100)
+scale = Vector2(2, 2)
+zoom = Vector2(0.3, 0.3)
+
+[node name="Buttons" type="Node2D" parent="."]
+
+[node name="End" type="OptionButton" parent="Buttons"]
+offset_right = 45.0
+offset_bottom = 20.0
+
+[node name="Start" type="OptionButton" parent="Buttons"]
+offset_right = 45.0
+offset_bottom = 20.0
+
+[node name="StartSearch" type="Button" parent="Buttons"]
+offset_left = -2757.0
+offset_top = -997.0
+offset_right = -2390.0
+offset_bottom = -817.0
+theme = SubResource("Theme_ktay2")
+theme_override_colors/font_hover_color = Color(0.699653, 0.699653, 0.699653, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_h15q1")
+text = "Search"
+script = ExtResource("4_yospu")
