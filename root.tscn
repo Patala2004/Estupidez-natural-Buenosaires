@@ -193,7 +193,6 @@ default_color = Color(1, 1, 1, 0)
 
 [node name="Belgrano-Bolívar" type="Line2D" parent="Metro/Aristas"]
 position = Vector2(-117, -615)
-scale = Vector2(1, 1)
 points = PackedVector2Array(1919, 804, 2085, 644)
 width = 20.0
 default_color = Color(1, 1, 1, 0)
