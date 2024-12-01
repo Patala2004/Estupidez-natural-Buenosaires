@@ -5,6 +5,121 @@ extends Node
 @onready var EndDropdown = $"../../End"
 
 
+
+var data_string = """
+Nodes
+# Linea azul claro (A)
+Linea A
+Alberti,-34.6098889,-58.4022383
+Pasco,-34.6098006,-58.4000067
+Congreso,-34.6093782,-58.3941471
+Saenz Peña,-34.6096207,-58.3898709
+Lima,-34.6094405,-58.3851738
+Piedras,-34.6091704,-58.3808303
+Perú,-34.6089209,-58.3776653
+Plaza de Mayo,-34.6088032,-58.3747191
+
+# Linea roja (B)
+Linea B
+Pasteur,-34.6046449,-58.4002802
+Callao2,-34.6045416,-58.3936271
+Uruguay,-34.60396,-58.3881074
+Carlos Pellegrini,-34.6031203,-58.3824338
+Florida,-34.6033139,-58.3755052
+Leandro N. Alem,-34.6029489,-58.3707529
+
+# Linea azul oscuro (C)
+Linea C
+Retiro,-34.5928119,-58.3765932
+San Martín,-34.5947557,-58.3785689
+Lavalle,-34.6020931,-58.3788688
+Diagonal Norte,-34.6047992,-58.3809299
+Avenida de Mayo,-34.6084535,-58.38168
+Moreno,-34.611637,-58.3816721
+Independencia1,-34.6177357,-58.3814756
+San Juan,-34.6214342,-58.3812285
+Constitución,-34.6270691,-58.3821521
+
+# Linea verde (D)
+Linea D
+Facultad de medicina,-34.5996257,-58.3951539
+Callao1,-34.5995227,-58.3939018
+Tribunales,-34.6002554,-58.3886161
+9 de Julio,-34.6044156,-58.3801764
+Catedral,-34.6075557,-58.3743275
+
+# Linea morada (E)
+Linea E
+Pichincha,-34.6231991,-58.3973942
+Entre Ríos,-34.6227073,-58.3930417
+San José,-34.6221889,-58.3858086
+Independencia2,-34.6178598,-58.3818726
+Belgrano,-34.6127849,-58.3782079
+Bolívar,-34.608878,-58.3753088
+
+Edges
+#Linea azul claro (A)
+Alberti,Pasco,280
+Pasco,Congreso,500
+Congreso,Saenz Peña,550
+Saenz Peña,Lima,350
+Lima,Piedras,500
+Piedras,Perú,350
+Perú,Plaza de Mayo,350
+
+#Linea roja (B)
+Pasteur,Callao2,600
+Callao2,Uruguay,450
+Uruguay,Carlos Pellegrini,450
+Carlos Pellegrini,Florida,550
+Florida,Leandro N. Alem,350
+
+#Linea azul oscuro (C)
+Retiro,San Martín,450
+San Martín,Lavalle,750
+Lavalle,Diagonal Norte,350
+Diagonal Norte,Avenida de Mayo,500
+Avenida de Mayo,Moreno,350
+Moreno,Independencia1,550
+Independencia1,San Juan,500
+San Juan,Constitución,500
+
+#Linea verde (D)
+Facultad de medicina,Callao1,400
+Callao1,Tribunales,1000
+Tribunales,9 de Julio,350
+9 de Julio,Catedral,500
+
+#Linea morada (E)
+Pichincha,Entre Ríos,500
+Entre Ríos,San José,600
+San José,Independencia2,750
+Independencia2,Belgrano,900
+Belgrano,Bolívar,350
+
+#Transbordos
+Transbordos
+#A -> C
+Avenida de Mayo,Lima,260
+#A -> D
+Perú,Catedral,110
+#A -> E
+Perú,Bolívar,160
+#D -> E
+Catedral,Bolívar,270
+#E -> C
+Independencia2,Independencia1,180
+#B -> D
+Carlos Pellegrini,9 de Julio,50
+#D -> C
+9 de Julio,Diagonal Norte,50
+#B -> C
+Carlos Pellegrini,Diagonal Norte,100
+"""
+
+
+
+
 class Graph:
 	var nodes : Dictionary = {}
 	var edges : Dictionary = {}
@@ -64,11 +179,10 @@ class Graph:
 func load_graph_from_file(file_path: String):
 	var graph = Graph.new()
 
-	var file = FileAccess.open(file_path, FileAccess.READ) #ensures that file_path is a valid address and that the file is readable
 	var mode = null
 	var curr_linea = "NONE"
-	while not file.eof_reached():
-		var line = file.get_line()
+	var data_lines = data_string.split('\n')
+	for line in data_lines:
 		line = line.strip_edges()                
 		if not line:
 			continue
@@ -124,7 +238,6 @@ func load_graph_from_file(file_path: String):
 				graph.add_trans(name_from, name_to, float(cost))
 			else:
 				graph.add_edge(name_from, name_to, float(cost))
-	file.close()
 	return graph
 
 class Algor extends Node:
@@ -310,5 +423,4 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
 

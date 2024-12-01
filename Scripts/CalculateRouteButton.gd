@@ -20,7 +20,7 @@ func _ready() -> void:
 	# Crear una instancia de Graph
 	graph_instance = AStarScript.new()
 	add_child(graph_instance)
-	graph = graph_instance.load_graph_from_file("res://Scripts/data.txt")
+	graph = graph_instance.load_graph_from_file(ProjectSettings.globalize_path("res://Scripts/data.txt"))
 	#_populate_stations()
 	
 	pressBut.pressed.connect(_on_pressed.bind())
